@@ -1,0 +1,37 @@
+import 'dart:io';
+import 'dart:math';
+
+String whoWon(String pick, String element) {
+  if (pick == element) {  //if the same, it's a tie
+    return "It's A Tie";
+  } else if (pick == "Bato" && element == "Gunting") {
+    return "You Win!";
+  } else if (pick == "Gunting" && element == "Papel") {
+    return "You Win!";
+  } else if (pick == "Papel" && element == "Bato") {
+    return "You Win!";
+  } else {  //if it's not a tie and you didn't win, computer won
+    return "Opponent Wins!";
+  }
+}
+
+  void main() {
+
+    print("Papel, Gunting, Bato! What's your Pick?");
+    print("---------------------------------------------------");
+    String pick = stdin.readLineSync();
+    print("---------------------------------------------------");
+    print("Your Pick: $pick");
+    
+    var papel = "Papel";
+    var gunting = "Gunting";
+    var bato = "Bato";
+
+    var list = [papel, gunting, bato];
+    final random = new Random();
+    var element = list[random.nextInt(list.length)];
+    print("Your Opponent's Pick: $element");
+    print("---------------------------------------------------");
+    print(whoWon(pick, element));
+    
+  }
