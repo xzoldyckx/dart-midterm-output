@@ -10,7 +10,7 @@ String whoWon(String pick, String element) {
     return "You Win!";
   } else if (pick == "Papel" && element == "Bato") {
     return "You Win!";
-  } else {  //if it's not a tie and you didn't win, computer won
+  } else { 
     return "Opponent Wins!";
   }
 }
